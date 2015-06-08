@@ -2,10 +2,10 @@
  * Created by Shenxl on 2015/6/8.
  */
 var React = require('react');
-var AppStore = require('../stores/AppStore');
-var RemoveFromCart = require('../components/removeFromCart');
-var Increase = require('../components/increase');
-var Decrease = require('../components/decrease');
+var AppStore = require('../../stores/AppStore');
+var RemoveFromCart = require('./removeFromCart');
+var Increase = require('./increase');
+var Decrease = require('./decrease');
 
 function cartItems(){
     return {items : AppStore.getCart()}

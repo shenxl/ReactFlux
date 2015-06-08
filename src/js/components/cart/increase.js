@@ -2,7 +2,7 @@
  * Created by Shenxl on 2015/6/8.
  */
 var React = require('react');
-var AppActions = require('../actions/AppAction');
+var AppActions = require('../../actions/AppAction');
 
 var Increase = React.createClass({
 
