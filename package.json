@@ -5,11 +5,12 @@
   "main": "gulpfile.js",
   "dependencies": {
     "flux": "^2.0.3",
-    "gulp-concat": "^2.5.2",
     "gulp": "^3.9.0",
-    "keymirror": "^0.1.1",
-    "react": "^0.13.3",
     "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.5.2",
+    "keymirror": "^0.1.1",
+    "object-assign": "^3.0.0",
+    "react": "^0.13.3",
     "reactify": "^1.1.1"
   },
   "devDependencies": {},

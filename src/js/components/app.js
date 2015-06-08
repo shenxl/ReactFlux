@@ -3,16 +3,22 @@
  */
 
 var React = require('react');
+var Catalog = require('../components/catalog');
+var Cart = require('../components/cart');
 
 var App = React.createClass({
 
-	render: function() {
-		return (
-        <div>
-            <h1>Hello World Flux App</h1>
-        </div>
-		);
-	}
+    render: function() {
+        return (
+            <div>
+                <h1>Let`s Shop</h1>
+                <Catalog />
+
+                <h1>Cart Info</h1>
+                <Cart />
+            </div>
+        );
+    }
 
 });
 
