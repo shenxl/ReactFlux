@@ -14,7 +14,7 @@ var App = React.createClass({
                 <h1>Let`s Shop</h1>
                 <Catalog />
 
-                <h1>Cart Info</h1>
+                <h1>¹ºÎï³µ</h1>
                 <Cart />
             </div>
         );
