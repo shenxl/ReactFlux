@@ -4,6 +4,8 @@
 var React = require('react');
 var AppStore = require('../../stores/AppStore');
 var AddToCart = require('./addToCart');
+var CatalogItem = require('./catalogItem');
+var StoreWatchMixin = require('../../mixins/storeWatchMixin');
 
 function getCatelog(){
     return {items : AppStore.getCatelog()}
@@ -11,20 +13,18 @@ function getCatelog(){
 
 var Catalog = React.createClass({
 
-    getInitialState: function() {
-    	return getCatelog();
-    },
-    
+    mixins:[StoreWatchMixin(getCatelog)],
+
 	render: function() {
         var items = this.state.items.map(function(item){
-            return <tr><td>{item.title}</td><td>${item.cost}</td><td><AddToCart item={item} /></td></tr>
+            return <CatalogItem key={item.id} item={item} />
         });
-		return (
-            <table className="table table-hover">
+        return (
+            <div className="row">
                 {items}
-            </table>
-		);
-	}
+            </div>
+        );
+    }
 
 });
 

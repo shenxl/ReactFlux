@@ -6,6 +6,8 @@ var AppStore = require('../../stores/AppStore');
 var RemoveFromCart = require('./removeFromCart');
 var Increase = require('./increase');
 var Decrease = require('./decrease');
+var StoreWatchMixin = require('../../mixins/storeWatchMixin');
+var Link = require('react-router-component').Link;
 
 function cartItems(){
     return {items : AppStore.getCart()}
@@ -13,17 +15,7 @@ function cartItems(){
 
 var Cart = React.createClass({
 
-    getInitialState: function() {
-        return cartItems();
-    },
-
-    componentWillMount: function() {
-        AppStore.addChangeListener(this._onChange);
-    },
-
-    _onChange:function(){
-        this.setState(cartItems());
-    },
+    mixins:[StoreWatchMixin(cartItems)],
 
     render: function() {
 
@@ -47,24 +39,27 @@ var Cart = React.createClass({
             )
         });
         return (
-            <table className="table tableble-hover">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>Item</th>
-                    <th>Qty</th>
-                    <th></th>
-                    <th>Subtotal</th>
-                </tr>
-                </thead>
-                <tbody>{items}</tbody>
-                <tfoot>
+            <div>
+                <table className="table tableble-hover">
+                    <thead>
                     <tr>
-                        <td colSpan="4" className="text-right">Total</td>
-                        <td>${total}</td>
+                        <th></th>
+                        <th>商品名称</th>
+                        <th>数量</th>
+                        <th></th>
+                        <th>小计</th>
                     </tr>
-                </tfoot>                
-            </table>
+                    </thead>
+                    <tbody>{items}</tbody>
+                    <tfoot>
+                        <tr>
+                            <td colSpan="4" className="text-right">总计</td>
+                            <td>${total}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <Link href='/'>继续购物</Link>
+            </div>
         );
     }
 

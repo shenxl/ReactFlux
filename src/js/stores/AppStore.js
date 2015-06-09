@@ -13,9 +13,9 @@ var _catalog = [];
 for(var i = 1; i < 9;i++){
     _catalog.push({
         'id':'Widget' + i,
-        'title' : '��Ʒ #' + i,
-        'summary' : 'This is an awesome widget!',
-        'description':'This is some decription for number ' + i + ' widget',
+        'title' : '商品 #' + i,
+        'summary' : '一个不同寻常的商品'+ i +'!',
+        'description':'这是一个 [商品'+ i +'] 的描述啊 巴拉巴拉巴拉巴拉! ',
         'img' : '/assets/product.png',
         'cost' : i
     });
@@ -56,6 +56,16 @@ function _addItem(item){
     }
 }
 
+function _cartTotals(){
+    var qty =0, total = 0;
+    _cartItems.forEach(function(cartItem){
+        qty+=cartItem.qty;
+        total+=cartItem.qty*cartItem.cost;
+    });
+    return {'qty': qty, 'total': total};
+}
+
+
 var AppStore = assign({},EventEmitter.prototype,{
     emitChange : function(){
         this.emit(CHANGE_EVENT)
@@ -72,6 +82,11 @@ var AppStore = assign({},EventEmitter.prototype,{
     getCatelog:function(){
         return _catalog
     },
+
+    getCartTotals: function(){
+        return _cartTotals()
+    },
+
     dispatcherIndex:AppDispatcher.register(function(payload){
         var action = payload.action; // this is our action from handleViewAction
         switch(action.actionType){
