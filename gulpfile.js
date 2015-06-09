@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var browserify = require('gulp-browserify');
-var concat = require('gulp-concat');
+var concat = require("gulp-concat");
 
 gulp.task('browserify', function () {
     gulp.src('src/js/main.js')
@@ -8,6 +8,7 @@ gulp.task('browserify', function () {
         .pipe(concat('main.js'))
         .pipe(gulp.dest('dist/js'));
 });
+
 
 gulp.task('copy', function () {
     gulp.src('src/index.html')

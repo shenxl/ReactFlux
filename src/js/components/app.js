@@ -14,7 +14,7 @@ var App = React.createClass({
                 <h1>Let`s Shop</h1>
                 <Catalog />
 
-                <h1>购物车信息</h1>
+                <h1>Cart Info 中文 测试12345</h1>
                 <Cart />
             </div>
         );

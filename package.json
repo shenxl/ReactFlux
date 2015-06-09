@@ -11,9 +11,8 @@
     "keymirror": "^0.1.1",
     "object-assign": "^3.0.0",
     "react": "^0.13.3",
-    "reactify": "^1.1.1"
+    "reactify": "^0.15.2"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

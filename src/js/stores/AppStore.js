@@ -13,7 +13,7 @@ var _catalog = [];
 for(var i = 1; i < 9;i++){
     _catalog.push({
         'id':'Widget' + i,
-        'title' : 'Widget #' + i,
+        'title' : 'ÉÌÆ· #' + i,
         'summary' : 'This is an awesome widget!',
         'description':'This is some decription for number ' + i + ' widget',
         'img' : '/assets/product.png',
